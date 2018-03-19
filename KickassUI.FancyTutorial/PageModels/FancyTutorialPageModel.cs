@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using FormsToolkit;
 using FreshMvvm;
 using KickassUI.FancyTutorial.Models;
 

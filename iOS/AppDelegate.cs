@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using UIKit;
 
@@ -14,7 +15,7 @@ namespace KickassUI.FancyTutorial.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
-
+            CachedImageRenderer.Init();
             LoadApplication(new App());
 
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
