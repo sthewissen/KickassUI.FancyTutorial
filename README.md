@@ -7,3 +7,4 @@ A simple Xamarin.Forms tutorial screen as talked about in my blogpost on: https:
 - CarouselView – Carousel control for Xamarin Forms – https://github.com/alexrainman/CarouselView
 - LiveXAML – Live simulator updates for your XAML code – http://www.livexaml.com
 
+![](https://github.com/sthewissen/KickassUI.FancyTutorial/blob/master/simpletutorial.jpg?raw=true)
