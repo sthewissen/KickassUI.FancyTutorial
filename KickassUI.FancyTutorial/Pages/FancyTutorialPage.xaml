@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Name="page" NavigationPage.HasNavigationBar="false" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="KickassUI.FancyTutorial.Pages.FancyTutorialPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+           <carousel:CarouselViewControl x:Name="carousel" ItemsSource="{Binding TutorialItems}" Orientation="Horizontal" Position="0" InterPageSpacing="5" ShowIndicators="false">
+               <carousel:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                            <Grid>
+                                <Image x:Name="background" Source="{Binding ImageUrl}" Aspect="AspectFill" />
+                                <StackLayout>
+                                    <StackLayout VerticalOptions="CenterAndExpand">
+                                        <Image Margin="0,100,0,20" Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
+                                        <Label FontFamily="Montserrat" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Title}"/>
+                                        <Label FontFamily="Raleway-Bold" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Subtitle}" />
+                                        <Label Margin="20,20,20,0" FontFamily="Montserrat" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Text}"/>
+                                    </StackLayout>
+                                    <Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" FontFamily="Montserrat" TextColor="#EEE" Text="SWIPE TO CONTINUE" />
+                                </StackLayout>
+                            </Grid>
+                    </DataTemplate>
+                </carousel:CarouselViewControl.ItemTemplate>
+            </carousel:CarouselViewControl>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
