@@ -1,55 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage x:Name="page" NavigationPage.HasNavigationBar="false" 
-             xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             x:Class="KickassUI.FancyTutorial.Pages.FancyTutorialPage">
+<ContentPage x:Name="page" NavigationPage.HasNavigationBar="false" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" x:Class="KickassUI.FancyTutorial.Pages.FancyTutorialPage">
     <ContentPage.Content>
         <Grid BackgroundColor="Black">
-           <carousel:CarouselViewControl x:Name="carousel" ItemsSource="{Binding TutorialItems}" Orientation="Horizontal" Position="0" InterPageSpacing="5" ShowIndicators="false">
-               <carousel:CarouselViewControl.ItemTemplate>
+            <carousel:CarouselViewControl x:Name="carousel" ItemsSource="{Binding TutorialItems}" Orientation="Horizontal" Position="0" InterPageSpacing="5" ShowIndicators="false">
+                <carousel:CarouselViewControl.ItemTemplate>
                     <DataTemplate>
-                            <Grid>
-                                <ffimageloading:CachedImage x:Name="background" Source="{Binding ImageUrl}" Aspect="AspectFill" />
-                                <StackLayout>
-                                    <StackLayout VerticalOptions="CenterAndExpand">
-                                        <Image Margin="0,100,0,20" Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
-                                        <Label FontSize="50" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Title}">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                        <Label FontFamily="Raleway-Bold" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Subtitle}">
-                                             <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Raleway-Bold" />
-                                                    <On Platform="Android" Value="fonts/Raleway-Bold.ttf#Raleway-Bold" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                        <Label Margin="20,20,20,0" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Text}">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
-                                    </StackLayout>
-                                    <Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE">
-                                            <Label.FontFamily>
-                                                <OnPlatform x:TypeArguments="x:String">
-                                                    <On Platform="iOS" Value="Montserrat" />
-                                                    <On Platform="Android" Value="fonts/Montserrat-Regular.ttf#Montserrat" />
-                                                </OnPlatform>
-                                            </Label.FontFamily> 
-                                        </Label>
+                        <Grid>
+                            <ffimageloading:CachedImage x:Name="background" Source="{Binding ImageUrl}" Aspect="AspectFill" />
+                            <StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Margin="0,100,0,20" Source="logo.png" WidthRequest="80" HorizontalOptions="Center" />
+                                    <Label FontSize="50" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Title}" FontFamily="{StaticResource MontserratRegular}" />
+                                    <Label FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Subtitle}" FontFamily="{StaticResource RalewayBold}" />
+                                    <Label Margin="20,20,20,0" FontSize="14" TextColor="White" HorizontalTextAlignment="Center" Text="{Binding Text}" FontFamily="{StaticResource MontserratRegular}" />
                                 </StackLayout>
-                            </Grid>
+                                <Label VerticalOptions="EndAndExpand" Margin="0,0,0,40" FontSize="12" HorizontalTextAlignment="Center" TextColor="#EEE" Text="SWIPE TO CONTINUE" FontFamily="{StaticResource MontserratRegular}" />
+                            </StackLayout>
+                        </Grid>
                     </DataTemplate>
                 </carousel:CarouselViewControl.ItemTemplate>
             </carousel:CarouselViewControl>
